@@ -30,3 +30,23 @@ Node *reverseDLL(Node* head){
 
     return temp;
 }
+
+
+Node* reverseDLL(Node* head){
+    if(head==NULL){
+        return head;
+    }
+
+    Node* temp=NULL;
+    Node* prev=NULL;
+    Node* curr=head;
+
+    while(curr!=NULL){
+        temp=curr->next;
+        curr->next=curr->prev;
+        curr->prev=temp;
+        prev=curr;
+        curr=temp;
+    }
+    return prev;
+}
