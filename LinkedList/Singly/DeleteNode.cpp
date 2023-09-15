@@ -2,16 +2,19 @@
 using namespace std;
 
 struct ListNode{
-    int val;
+    int data;
     ListNode *next;
-    ListNode(int x): val(x),next(NULL) {}
+    ListNode(int x){
+        data=x;
+        next=NULL;
+    }
 };
 
 class Solution{
     public:
 
     void DeleteNode(ListNode *node){
-        node->val=node->next->val;
+        node->data=node->next->data;
         node->next=node->next->next;
     }
 
